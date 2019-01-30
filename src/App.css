@@ -2,7 +2,11 @@ body,
 #result {
   padding: 15px;
 }
-
+#footer {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+}
 ol {
   padding: 0 15px;
 }

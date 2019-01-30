@@ -17,6 +17,10 @@ class App extends Component {
         <div align='left' id="result"></div>
         <div>Don't have bit.ly access token?</div>
         <div>Get it <a target="_blank" rel="noopener noreferrer" href="https://bitly.com/a/oauth_apps">here</a></div>
+        <div id='footer'>
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/shaiws/bit.ly-clicks-counter">Source Code</a>
+        </div>
+
       </div>
     );
   }
