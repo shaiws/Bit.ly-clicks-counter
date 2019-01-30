@@ -38,6 +38,9 @@ function loadComponents() {
       button.disabled = true;
       fetchLinks(accessToken);
     }
+    else {
+      result.innerHTML = "Invalid access token"
+    }
   });
 }
 async function renderList(json, accessToken) {
@@ -65,7 +68,7 @@ async function fecthClicks(link, accessToken) {
       return "N/A"
     }
   } catch (e) {
-    result.innerHTML = e;
+    result.innerHTML = "Invalid access token";
     button.disabled = false;
   }
 }
@@ -85,7 +88,7 @@ async function fetchLinks(accessToken) {
       button.disabled = false;
     }
   } catch (e) {
-    result.innerHTML = e;
+    result.innerHTML = "Invalid access token";
     button.disabled = false;
   }
 }
