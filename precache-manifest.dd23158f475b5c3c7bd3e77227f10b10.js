@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/bit.ly-clicks-counter/static/js/runtime~main.927cc5c6.js"
   },
   {
-    "revision": "91e681657f08dafddbf3",
-    "url": "/bit.ly-clicks-counter/static/js/main.91e68165.chunk.js"
+    "revision": "c90e327e17d57c0ecc24",
+    "url": "/bit.ly-clicks-counter/static/js/main.c90e327e.chunk.js"
   },
   {
     "revision": "5dcbecee6739915cbd6f",
     "url": "/bit.ly-clicks-counter/static/js/1.5dcbecee.chunk.js"
   },
   {
-    "revision": "91e681657f08dafddbf3",
-    "url": "/bit.ly-clicks-counter/static/css/main.848c7831.chunk.css"
+    "revision": "c90e327e17d57c0ecc24",
+    "url": "/bit.ly-clicks-counter/static/css/main.fddc4046.chunk.css"
   },
   {
-    "revision": "7efb91026f023d8760c6835dec724c0e",
+    "revision": "3939e8e271dcd33bab90955b7515ed9c",
     "url": "/bit.ly-clicks-counter/index.html"
   }
 ];
