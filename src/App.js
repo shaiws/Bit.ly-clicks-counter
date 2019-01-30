@@ -5,17 +5,17 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { data: [] , disabled:false};
+    this.state = { data: [], disabled: false };
   }
 
   render() {
     return (
-    <div align='center'>
-      <h1>Get your bit.ly links' clicks count</h1>
-      <input type="text" placeholder="Enter bit.ly access token" />
-      <button disabled={this.state.disabled}>Get links clicks count</button>
-      <div align='left' id="result"></div>
-    </div>
+      <div align='center'>
+        <h1>Get your bit.ly links' clicks count</h1>
+        <input type="text" placeholder="Enter bit.ly access token" />
+        <button disabled={this.state.disabled}>Get links clicks count</button>
+        <div align='left' id="result"></div>
+      </div>
     );
   }
 
@@ -23,24 +23,27 @@ class App extends Component {
     loadComponents();
   }
 }
-let button, subInput, result,links;
+let button, subInput, result, links;
 function loadComponents() {
   button = document.querySelector('button');
   subInput = document.querySelector('input');
   result = document.querySelector('#result');
 
   button.addEventListener('click', () => {
-    button.disabled=true;
-    fetchLinks(subInput.value);
-    
+
+    const accessToken = subInput.value
+    if (/^[A-Za-z0-9]+$/.test(accessToken)) {
+      button.disabled = true;
+      fetchLinks(accessToken);
+    }
   });
 }
 async function renderList(json, accessToken) {
   links = json.data.link_history;
   let element = []
   for (let index = 0; index < links.length; index++) {
-     element[index] =`<li>Title: ${links[index].title} Link: <a href="${links[index].link}">${links[index].link}</a> Clicks: ${await (fecthClicks(links[index].link,accessToken))}</li>`;
-  }  
+    element[index] = `<li>Title: ${links[index].title}, Link: <a href="${links[index].link}">${links[index].link}</a>, Clicks: ${await (fecthClicks(links[index].link, accessToken))}</li>`;
+  }
   return `<ol>
     ${element.join("")}
   </ol>`;
@@ -60,7 +63,8 @@ async function fecthClicks(link, accessToken) {
       return "N/A"
     }
   } catch (e) {
-    console.error(e);
+    result.innerHTML = e;
+    button.disabled = false;
   }
 }
 
@@ -73,13 +77,14 @@ async function fetchLinks(accessToken) {
     if (response.ok) {
       const jsonData = await response.json();
       result.innerHTML = await renderList(jsonData, accessToken);
-      button.disabled=false;
+      button.disabled = false;
     } else {
       result.innerHTML = `Response.status: ${response.status}`;
-      button.disabled=false;
+      button.disabled = false;
     }
   } catch (e) {
     result.innerHTML = e;
+    button.disabled = false;
   }
 }
 
