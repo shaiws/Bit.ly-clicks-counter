@@ -15,6 +15,8 @@ class App extends Component {
         <input type="text" placeholder="Enter bit.ly access token" />
         <button disabled={this.state.disabled}>Get links clicks count</button>
         <div align='left' id="result"></div>
+        <div>Dont have bit.ly access token?</div>
+        <div>Get it <a href="https://bitly.com/a/oauth_apps">here</a></div>
       </div>
     );
   }
