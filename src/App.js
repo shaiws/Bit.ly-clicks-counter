@@ -16,7 +16,7 @@ class App extends Component {
         <button disabled={this.state.disabled}>Get links clicks count</button>
         <div align='left' id="result"></div>
         <div>Dont have bit.ly access token?</div>
-        <div>Get it <a href="https://bitly.com/a/oauth_apps">here</a></div>
+        <div>Get it <a target="_blank" rel="noopener noreferrer" href="https://bitly.com/a/oauth_apps">here</a></div>
       </div>
     );
   }
