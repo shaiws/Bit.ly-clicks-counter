@@ -47,7 +47,7 @@ async function renderList(json, accessToken) {
   links = json.data.link_history;
   let element = []
   for (let index = 0; index < links.length; index++) {
-    element[index] = `<li>Title: ${links[index].title}, Link: <a href="${links[index].link}">${links[index].link}</a>, Clicks: ${await (fecthClicks(links[index].link, accessToken))}</li>`;
+    element[index] = `<li>Title: ${links[index].title}, Link: <a target="_blank" rel="noopener noreferrer" href="${links[index].link}">${links[index].link}</a>, Clicks: ${await (fecthClicks(links[index].link, accessToken))}</li>`;
   }
   return `<ol>
     ${element.join("")}
